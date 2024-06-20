@@ -1,0 +1,40 @@
+.container {
+    padding: 16px;
+}
+
+.topContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 100px 0px 50px;
+}
+
+.profilePic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.button {
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.bottomContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.logout {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
