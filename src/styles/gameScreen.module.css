@@ -1,0 +1,35 @@
+.container {
+    padding: 16px;
+}
+
+.card {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #252525;
+}
+
+.card>img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.detailsContainer {
+    color: #fff;
+    padding: 16px;
+}
+
+
+.headdingContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.subHeaddingContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
