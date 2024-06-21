@@ -1,14 +1,16 @@
 import React from 'react'
 import style from '../styles/gameScreen.module.css'
 import GameCard from '../widgets/GameCard'
-
 import supportFile from '../utils/supportFiles'
+
 function GameScreen() {
+
     return (
         <div className={style.container}>
             {supportFile.map(
                 (item, index) => <GameCard
                     key={index}
+                    id={index}
                     img={item.img}
                     name={item.name}
                     price={item.price}

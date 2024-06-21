@@ -1,8 +1,12 @@
 import React from 'react'
 import style from '../styles/gameCard.module.css'
-function GameCard({ img, name, price, noOfParticipents, timeLeft }) {
+import { useNavigate } from 'react-router-dom';
+
+function GameCard({ img, name, price, noOfParticipents, timeLeft, id }) {
+    const navigate = useNavigate();
+
     return (
-        <div className={style.card}>
+        <div className={style.card} onClick={() => navigate(`/game/${id}`)}>
             <img src={img} alt="" />
             <div className={style.detailsContainer}>
                 <div className={style.headdingContainer}>
@@ -14,7 +18,7 @@ function GameCard({ img, name, price, noOfParticipents, timeLeft }) {
                     <p>{timeLeft} Min Left</p>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
