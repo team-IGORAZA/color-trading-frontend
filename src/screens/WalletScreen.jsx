@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from '../styles/walletScreen.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import TransactionDetiails from '../widgets/TransactionDetiails'
+import { Transactions } from '../utils/supportFiles'
+
 function WalletScreen() {
     return (
         <>
@@ -8,6 +10,7 @@ function WalletScreen() {
                 <h2>Earnings</h2>
                 <div className={styles.balance}>
                     <p>Balance</p>
+                    <br />
                     <p>200000 Rs</p>
                 </div>
                 <div className={styles.buttonContainer}>
@@ -17,39 +20,13 @@ function WalletScreen() {
                 <h2>Transactions</h2>
             </div>
             <div className={styles.buttomContainer}>
-                <div className={styles.detailsContainer}>
-                    <div className={styles.headdingContainer}>
-                        <p>Withdraw</p>
-                        <p>Success</p>
-                    </div>
-                    <div className={styles.subHeaddingContainer}>
-                        <p>200</p>
-                        <p>20-10-2024</p>
-                    </div>
-                    <p></p>
-                </div>
-                <div className={styles.detailsContainer}>
-                    <div className={styles.headdingContainer}>
-                        <p>Withdraw</p>
-                        <p>Success</p>
-                    </div>
-                    <div className={styles.subHeaddingContainer}>
-                        <p>200</p>
-                        <p>20-10-2024</p>
-                    </div>
-                    <p></p>
-                </div>
-                <div className={styles.detailsContainer}>
-                    <div className={styles.headdingContainer}>
-                        <p>Withdraw</p>
-                        <p>Success</p>
-                    </div>
-                    <div className={styles.subHeaddingContainer}>
-                        <p>200</p>
-                        <p>20-10-2024</p>
-                    </div>
-                    <p></p>
-                </div>
+                {Transactions.map((item, index) => <TransactionDetiails
+                    key={index}
+                    mode={item.mode}
+                    status={item.status}
+                    amount={item.amount}
+                    date={item.date}
+                />)}
             </div>
         </>
     )

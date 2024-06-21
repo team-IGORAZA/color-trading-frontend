@@ -37,4 +37,42 @@ const Games = [
     },
 ]
 
-export default Games
+const Transactions = [
+    {
+        mode: 'Withdraw',
+        status: 'Success',
+        amount: 200,
+        date: '20-04-2024'
+    },
+    {
+        mode: 'Withdraw',
+        status: 'Failed',
+        amount: 400,
+        date: '20-04-2024'
+    },
+    {
+        mode: 'Deposit',
+        status: 'Success',
+        amount: 1000,
+        date: '12-02-2024'
+    },
+    {
+        mode: 'Withdraw',
+        status: 'Success',
+        amount: 200,
+        date: '20-04-2024'
+    },
+    {
+        mode: 'Withdraw',
+        status: 'Success',
+        amount: 200,
+        date: '20-04-2024'
+    },
+    {
+        mode: 'Withdraw',
+        status: 'Success',
+        amount: 200,
+        date: '20-04-2024'
+    }
+]
+export { Games, Transactions }

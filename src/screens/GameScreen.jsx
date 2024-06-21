@@ -1,13 +1,15 @@
 import React from 'react'
 import style from '../styles/gameScreen.module.css'
 import GameCard from '../widgets/GameCard'
-import supportFile from '../utils/supportFiles'
+import { Games } from '../utils/supportFiles'
+
+
 
 function GameScreen() {
 
     return (
         <div className={style.container}>
-            {supportFile.map(
+            {Games.map(
                 (item, index) => <GameCard
                     key={index}
                     id={index}
