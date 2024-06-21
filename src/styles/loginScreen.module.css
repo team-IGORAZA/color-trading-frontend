@@ -4,6 +4,7 @@
     align-items: center;
     height: 100vh;
     flex-direction: column;
+
 }
 
 input {
@@ -12,16 +13,35 @@ input {
     border-radius: 5px;
     border: none;
     outline: none;
+    background-color: #F4F4F4;
 }
 
-button {
+.signInButton {
     width: 316px;
     padding: 8px;
     border: none;
     border-radius: 5px;
     margin-bottom: 10px;
+    color: white;
+    background-color: #252525;
+    ;
 }
+
+.signUpButton {
+    width: 316px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #F4F4F4;
+    ;
+}
+
 
 button:hover {
     cursor: pointer;
+}
+
+.forgot {
+    font-size: 12px;
 }

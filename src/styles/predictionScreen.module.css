@@ -1,0 +1,35 @@
+.container {
+    padding: 16px;
+
+}
+
+.topContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardContainer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.red {
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+}
+
+.green {
+    width: 100px;
+    height: 100px;
+    background-color: teal;
+}
+
+button {
+    width: 200px;
+}

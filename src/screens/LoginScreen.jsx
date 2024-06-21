@@ -15,7 +15,7 @@ function LoginScreen() {
 
     return (
         <div className={style.container}>
-            <div>
+            <div style={style.background}>
                 <form onSubmit={handleLogin}>
                     <div>
                         <p>Email</p>
@@ -24,10 +24,11 @@ function LoginScreen() {
                         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <br />
-                    <button type='submit'><p>Sign In</p></button>
+                    <button type='submit' className={style.signInButton}><p>Sign In</p></button>
                 </form>
-                <button><p>Sign Up</p></button>
+                <button className={style.signUpButton}><p>Sign Up</p></button>
             </div>
+            <p className={style.forgot}>forgot password?</p>
         </div>
     )
 }
