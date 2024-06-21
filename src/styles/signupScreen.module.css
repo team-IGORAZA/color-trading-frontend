@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+input {
+    width: 300px;
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 8px;
+    background-color: #252525;
+    border: none;
+    margin-top: 16px;
+    color: white;
+    border-radius: 5px;
+    width: 316px;
+}

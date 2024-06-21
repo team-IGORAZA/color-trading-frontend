@@ -26,7 +26,7 @@ function LoginScreen() {
                     <br />
                     <button type='submit' className={style.signInButton}><p>Sign In</p></button>
                 </form>
-                <button className={style.signUpButton}><p>Sign Up</p></button>
+                <button className={style.signUpButton} onClick={() => navigate('signup')}><p>Sign Up</p></button>
             </div>
             <p className={style.forgot}>forgot password?</p>
         </div>
