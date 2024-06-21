@@ -1,7 +1,7 @@
 import React from 'react'
 import style from '../styles/historyScreen.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFlag } from '@fortawesome/free-solid-svg-icons'
+import HistoryDetails from '../widgets/HistoryDetails'
+import { History } from '../utils/supportFiles'
 
 function HistoryScreen() {
     return (
@@ -12,21 +12,17 @@ function HistoryScreen() {
                 <div className={style.nonActiveFilter}><p>Win</p></div>
                 <div className={style.nonActiveFilter}><p>Loss</p></div>
             </div>
-            <div className={style.detailsContainer}>
-                <div className={style.iconConatiner}>
-                    <FontAwesomeIcon icon={faFlag} color='white' />
-                </div>
-                <div className={style.details}>
-                    <div className={style.detailsHeadding}>
-                        <p>Double Money</p>
-                        <p>50rs</p>
-                    </div>
-                    <div className={style.detailsSubHeadding}>
-                        <p>Win</p>
-                        <p>22-02-2024</p>
-                    </div>
-                    <div></div>
-                </div>
+            <div className={style.bottomContainer}>
+                {
+                    History.map((item, index) => <HistoryDetails
+                        key={index}
+                        event={item.event}
+                        status={item.status}
+                        amount={item.amout}
+                        date={item.date}
+                    />
+                    )
+                }
             </div>
         </div>
     )

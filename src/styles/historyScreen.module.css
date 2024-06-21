@@ -32,37 +32,8 @@
     border-radius: 5px;
 }
 
-.detailsContainer {
-    width: 100%;
+.bottomContainer {
     display: flex;
+    flex-direction: column;
     gap: 10px;
-    gap: 10px;
-}
-
-.iconConatiner {
-    background-color: #252525;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    border-radius: 30px;
-    align-items: center;
-    justify-content: center;
-}
-
-.details {
-    width: calc(100% - 90px);
-    padding: 10px;
-}
-
-.detailsHeadding {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 5px;
-}
-
-.detailsSubHeadding {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: gray;
 }
