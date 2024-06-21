@@ -38,12 +38,12 @@ function PredictionScreen() {
                     <div className={style.cardContainer}>
                         <div
                             className={style.red}
-                            style={{ border: selectedCard === 'red' ? '1px solid green' : 'none' }}
+                            style={{ border: selectedCard === 'red' ? '5px solid yellow' : 'none' }}
                             onClick={() => handleCardClick('red')}
                         ></div>
                         <div
                             className={style.green}
-                            style={{ border: selectedCard === 'green' ? '1px solid green' : 'none' }}
+                            style={{ border: selectedCard === 'green' ? '5px solid yellow' : 'none' }}
                             onClick={() => handleCardClick('green')}
                         ></div>
                     </div>
