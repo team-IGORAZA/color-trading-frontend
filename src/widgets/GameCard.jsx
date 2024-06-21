@@ -6,7 +6,7 @@ function GameCard({ img, name, price, noOfParticipents, timeLeft, id }) {
     const navigate = useNavigate();
 
     return (
-        <div className={style.card} onClick={() => navigate(`/game/${id}`)}>
+        <div className={style.card} onClick={() => navigate(`${id}`)}>
             <img src={img} alt="" />
             <div className={style.detailsContainer}>
                 <div className={style.headdingContainer}>
