@@ -2,18 +2,23 @@ import React, { useState } from 'react';
 import style from '../styles/predictionScreen.module.css';
 import PopUpWindow from '../widgets/PopUpWindow';
 
-
 function PredictionScreen() {
     const [selectedCard, setSelectedCard] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [confirmed, setConfirmed] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleCardClick = (card) => {
-        setSelectedCard(card);
+        setSelectedCard(prevCard => prevCard === card ? null : card);
+        setErrorMessage('');  // Clear any previous error message
     };
 
     const handleSubmitClick = () => {
-        setShowModal(true);
+        if (selectedCard === null) {
+            setErrorMessage('Please select a card before submitting.');
+        } else {
+            setShowModal(true);
+        }
     };
 
     const handleConfirm = () => {
@@ -27,7 +32,10 @@ function PredictionScreen() {
 
     return (
         <div className={style.container}>
-            <h2>Select Your Card</h2>
+            {
+                confirmed ? <h2>Selected Card</h2> : <h2>Select a card</h2>
+            }
+
             {confirmed ? (
                 <div className={style.topContainer}>
                     {selectedCard === 'red' && <div className={style.red}></div>}
@@ -47,6 +55,7 @@ function PredictionScreen() {
                             onClick={() => handleCardClick('green')}
                         ></div>
                     </div>
+                    {errorMessage && <p className={style.error}>{errorMessage}</p>}
                     <button onClick={handleSubmitClick}>Submit</button>
                 </div>
             )}
