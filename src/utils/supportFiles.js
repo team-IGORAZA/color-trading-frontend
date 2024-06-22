@@ -133,4 +133,65 @@ const History = [
         date: '20-12-2024'
     },
 ]
-export { Games, Transactions, History }
+const Winner = [
+    {
+        event: 'One Day Prediction',
+        status: "Win",
+        amout: 10000,
+        name: 'Anirudh'
+    },
+    {
+        event: 'One Day Prediction',
+        status: "Loss",
+        amout: 5000,
+        name: 'ajeesh'
+    },
+    {
+        event: '1 hr Prediction',
+        status: "Win",
+        amout: 1000,
+        name: "ajay"
+    },
+    {
+        event: '6 hr Prediction',
+        status: "Loss",
+        amout: 5000,
+        name: 'adarsh'
+    },
+    {
+        event: '5 min Prediction',
+        status: "Loss",
+        amout: 100,
+        name: 'abhinav'
+    }, {
+        event: 'One Day Prediction',
+        status: "Win",
+        amout: 10000,
+        name: 'Anirudh'
+    },
+    {
+        event: 'One Day Prediction',
+        status: "Loss",
+        amout: 5000,
+        name: 'ajeesh'
+    },
+    {
+        event: '1 hr Prediction',
+        status: "Win",
+        amout: 1000,
+        name: "ajay"
+    },
+    {
+        event: '6 hr Prediction',
+        status: "Loss",
+        amout: 5000,
+        name: 'adarsh'
+    },
+    {
+        event: '5 min Prediction',
+        status: "Loss",
+        amout: 100,
+        name: 'abhinav'
+    },
+]
+export { Games, Transactions, History, Winner }

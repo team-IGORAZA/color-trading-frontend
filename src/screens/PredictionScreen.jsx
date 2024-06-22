@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import style from '../styles/predictionScreen.module.css';
 import PopUpWindow from '../widgets/PopUpWindow';
+import WinnerDetails from '../widgets/WinnerDetails';
+import { Winner } from '../utils/supportFiles'
+
 
 function PredictionScreen() {
     const [selectedCard, setSelectedCard] = useState(null);
@@ -71,23 +74,14 @@ function PredictionScreen() {
                 )}
             </div>
             <div className={style.bottom}>
-                <div className={style.winnerDetails}>
-                    <img src="" alt="" />
-                    <div className={style.detailsContainer}>
-                        <div>
-                            <div className={style.headding}>
-                                <p>Anirudh</p>
-                                <p>50rs</p>
-                            </div>
-                            <div className={style.subHeadding}>
-                                <p>
-                                    1 hr prediction
-                                </p>
-                                <p>win</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {Winner.map((item, index) => <WinnerDetails
+                    key={index}
+                    name={item.name}
+                    event={item.event}
+                    status={item.status}
+                    amount={item.amout}
+                />)}
+
             </div>
         </div>
     );
