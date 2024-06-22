@@ -6,8 +6,8 @@ function TransactionDetiails({ mode, status, amount, date }) {
     return (
         <div className={styles.detailsContainer}>
             <div className={styles.headdingContainer}>
-                <p style={{ color: mode === 'Deposit' ? 'green' : 'red' }}>{mode}</p>
-                <p style={{ color: mode === 'Deposit' ? 'green' : 'red' }}>{mode === 'Withdraw' ? '-' : "+"}{amount}</p>
+                <p style={{ color: mode === 'Deposit' ? 'green' : 'black' }}>{mode}</p>
+                <p style={{ color: mode === 'Deposit' ? 'green' : 'black' }}>{mode === 'Withdraw' ? '-' : "+"}{amount}</p>
             </div>
             <div className={styles.subHeaddingContainer}>
                 <p>{status}</p>
