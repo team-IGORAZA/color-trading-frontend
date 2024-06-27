@@ -17,11 +17,12 @@
 .headding {
     display: flex;
     justify-content: space-between;
+    color: black;
 }
 
 .subHeadding {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
-    color: gray;
+    color: black;
 }
