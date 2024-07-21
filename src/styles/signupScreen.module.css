@@ -19,3 +19,12 @@ button {
     border-radius: 5px;
     width: 316px;
 }
+
+.errorInput {
+    border: 1px solid tomato;
+}
+
+.errorText {
+    color: tomato;
+    font-size: 12px;
+}
