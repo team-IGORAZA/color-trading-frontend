@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from '../styles/signupScreen.module.css'
-
+import axios from 'axios';
 function SignUpScreen() {
     const [formData, setFormData] = useState({
         name: '',
@@ -9,6 +9,7 @@ function SignUpScreen() {
         password: '',
         confirmPassword: ''
     });
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -21,8 +22,19 @@ function SignUpScreen() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log(formData);
-
+        axios.post('http://127.0.0.1:8000/api/v1/user/register/', {
+            first_name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            password: formData.password,
+            confirm_password: formData.confirmPassword
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
 
     return (
