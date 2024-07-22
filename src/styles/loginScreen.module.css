@@ -45,3 +45,8 @@ button:hover {
 .forgot {
     font-size: 12px;
 }
+
+.errorText {
+    font-size: 12px;
+    color: tomato;
+}
