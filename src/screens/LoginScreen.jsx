@@ -12,23 +12,24 @@ function LoginScreen() {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        axios.post('http://127.0.0.1:8000/api/v1/user/login/', {
-            email: email,
-            password: password
-        })
-            .then(function (response) {
-                let accessToken = response.data.response.accessToken
-                if (accessToken) {
-                    navigate('dashboard/game')
-                    localStorage.setItem('accessToken', response.data.response.accessToken);
-                }
-                setError(error.response.data.message.general[0])
+        // axios.post('http://127.0.0.1:8000/api/v1/user/login/', {
+        //     email: email,
+        //     password: password
+        // })
+        //     .then(function (response) {
+        //         let accessToken = response.data.response.accessToken
+        //         if (accessToken) {
+        //             navigate('dashboard/game')
+        //             localStorage.setItem('accessToken', response.data.response.accessToken);
+        //         }
+        //         setError(error.response.data.message.general[0])
 
-            })
-            .catch(function (error) {
-                setError(error.response.data.message.general[0])
-            });
+        //     })
+        //     .catch(function (error) {
+        //         setError(error.response.data.message.general[0])
+        //     });
 
+        navigate('dashboard/game')
 
     }
 

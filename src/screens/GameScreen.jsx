@@ -7,42 +7,32 @@ import axios from 'axios'
 
 function GameScreen() {
 
-    const accessToken = localStorage.getItem('accessToken')
+    // const accessToken = localStorage.getItem('accessToken')
 
-    const [response, setResponse] = useState([])
+    // const [response, setResponse] = useState([])
 
-    useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/v1/game/details/', {
-            headers: {
-                'Authorization': `Bearer ${accessToken}`
-            }
-        })
-            .then(function (response) {
-                setResponse(response.data.response)
-            })
-            .catch(function (error) {
-            })
-            .finally(function () {
-                // always executed
-            });
-    }, [])
+    // useEffect(() => {
+    //     axios.get('http://127.0.0.1:8000/api/v1/game/details/', {
+    //         headers: {
+    //             'Authorization': `Bearer ${accessToken}`
+    //         }
+    //     })
+    //         .then(function (response) {
+    //             setResponse(response.data.response)
+    //         })
+    //         .catch(function (error) {
+    //         })
+    //         .finally(function () {
+    //             // always executed
+    //         });
+    // }, [])
 
 
 
     return (
         <div className={style.container}>
             <div className={style.timeContainer}>
-                {
-                    response.map((item) =>
-                        // style={{ backgroundColor: '#252525', borderRadius: 10, color: 'white' }}
-                        <div className={style.time} key={item.id}>
-                            <FontAwesomeIcon icon={faClock} />
-                            <p>{item.title}</p>
-                        </div>
-                    )
-                }
-
-                {/* <div className={style.time}>
+                <div className={style.time} style={{ backgroundColor: '#252525', borderRadius: 10, color: 'white' }}>
                     <FontAwesomeIcon icon={faClock} />
                     <p>Win Go</p>
                     <p>1 Min</p>
@@ -56,7 +46,12 @@ function GameScreen() {
                     <FontAwesomeIcon icon={faClock} />
                     <p>Win Go</p>
                     <p>1 Min</p>
-                </div> */}
+                </div>
+                <div className={style.time}>
+                    <FontAwesomeIcon icon={faClock} />
+                    <p>Win Go</p>
+                    <p>1 Min</p>
+                </div>
             </div>
             <div className={style.ad}>
                 <img src="https://images.unsplash.com/photo-1627831389670-d20f5a01c536?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
