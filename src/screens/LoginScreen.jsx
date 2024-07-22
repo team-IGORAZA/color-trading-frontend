@@ -20,7 +20,7 @@ function LoginScreen() {
                 let accessToken = response.data.response.accessToken
                 if (accessToken) {
                     navigate('dashboard/game')
-                    localStorage.setItem('assessToken', response.data.response.accessToken);
+                    localStorage.setItem('accessToken', response.data.response.accessToken);
                 }
                 setError(error.response.data.message.general[0])
 
