@@ -2,6 +2,7 @@ import BannerImage from "./BannerImage";
 import HomeGames from "./HomeGames";
 import NotificationBar from "./NotificationBar";
 import "./Home.css"
+import BottomNavbar from "../../Components/BottomNavbar";
 
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <NotificationBar/>
       <BannerImage/>
       <HomeGames/>
+      <BottomNavbar/>
     </main>
   )
 }

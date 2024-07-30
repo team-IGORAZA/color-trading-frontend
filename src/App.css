@@ -7,3 +7,11 @@ body {
   background: linear-gradient(88.25deg, #4B0082 44.55%, #10001C 98.52%);
 
 }
+
+.bottom-icon-bg {
+  background: linear-gradient(90deg, #FF512F 0%, #DD2476 100%);
+}
+.bottom-bg {
+  background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+
+}
