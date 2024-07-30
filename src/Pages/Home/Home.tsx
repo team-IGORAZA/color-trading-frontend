@@ -3,6 +3,7 @@ import HomeGames from "./HomeGames";
 import NotificationBar from "./NotificationBar";
 import "./Home.css"
 import BottomNavbar from "../../Components/BottomNavbar";
+import WithdrawalPanel from "./WithdrawlPannel";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <BannerImage/>
       <HomeGames/>
       <BottomNavbar/>
+      <WithdrawalPanel/>
     </main>
   )
 }
