@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function HomeGames() {
   const [currentBtn, setCurrentBtn] = useState(0);
@@ -8,6 +9,21 @@ export default function HomeGames() {
     { label: "Popular" },
     { label: "Casino" }
   ];
+
+  const images = [
+    { image: "/games/game-1.png", path: "/win-go-1-min", category: "all" },
+    { image: "/games/game-2.png", path: "/", category: "all" },
+    { image: "/games/game-3.png", path: "/", category: "popular" },
+    { image: "/games/game-4.png", path: "/", category: "popular" },
+    { image: "/games/game-5.png", path: "/", category: "casino" },
+  ];
+
+  const filteredImages = images.filter((image) => {
+    if (currentBtn === 0) return true;
+    if (currentBtn === 1) return image.category === "popular";
+    if (currentBtn === 2) return image.category === "casino";
+    return false;
+  });
 
   return (
     <section className="mt-6 p-3 flex flex-col items-center">
@@ -26,14 +42,11 @@ export default function HomeGames() {
       </div>
       {/* Game Images */}
       <div className="grid grid-cols-2 mt-4 gap-3 min-h-96">
-        {Array.from({ length: 5 })
-          .slice(
-            currentBtn === 0 ? 0 : currentBtn === 1 ? 0 : 3,
-            currentBtn === 0 ? 6 : currentBtn === 1 ? 3 : 5
-          )
-          .map((_, index) => (
-            <img key={index} src={`/games/game-${index + 1}.png`} alt={`Game image ${index}`} />
-          ))}
+        {filteredImages.map((image, index) => (
+          <Link key={index} to={image.path}>
+          <img  src={image.image} alt={`Game image ${index + 1}`} />
+          </Link>
+        ))}
       </div>
     </section>
   );
