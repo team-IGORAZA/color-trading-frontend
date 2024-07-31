@@ -1,0 +1,1 @@
+export const BACKEND_URL="https://color-trading-backend-production.up.railway.app"
