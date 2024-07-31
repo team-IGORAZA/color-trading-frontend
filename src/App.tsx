@@ -4,6 +4,7 @@ import Register from "./Pages/Register/Register"
 import PrivateRoute from "./Components/PrivateRoute"
 import Home from "./Pages/Home/Home"
 import "./App.css"
+import WinGO1Min from "./Pages/WinGO1Min/WinGO1Min"
 
 export default function App() {
   return (
@@ -11,12 +12,13 @@ export default function App() {
       <BrowserRouter>
         {/* ? unprotected routes */}
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           {/* ? protected routes */}
           <Route element={<PrivateRoute />}>
             {/* * protected paths place here */}
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/win-go-1-min" element={<WinGO1Min/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
