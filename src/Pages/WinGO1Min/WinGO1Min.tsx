@@ -21,10 +21,12 @@ export default function WinGO1Min() {
                 </button>
                 <span className="text-xl font-bold text-white">Win Go 1 Minute</span>
             </header>
-            <section className="flex flex-col justify-center items-center">
+            <section className="flex flex-col justify-center items-center p-3">
                 <Bonus />
                 <TimeBanner />
                 <ColorMap/>
+                {/* ? participate button */}
+                <button className="btn mt-6 w-full max-w-4xl btn-bg text-black shadow-xl border-none">Participate</button>
             </section>
         </main>
     )
