@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Login from "./Pages/Login/Login"
 import Register from "./Pages/Register/Register"
 import PrivateRoute from "./Components/PrivateRoute"
 import Home from "./Pages/Home/Home"
 import "./App.css"
 import WinGO1Min from "./Pages/WinGO1Min/WinGO1Min"
+import HomePage from "./Components/HomePage"
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
       <BrowserRouter>
         {/* ? unprotected routes */}
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<HomePage/>} />
           <Route path="/register" element={<Register />} />
           {/* ? protected routes */}
           <Route element={<PrivateRoute />}>

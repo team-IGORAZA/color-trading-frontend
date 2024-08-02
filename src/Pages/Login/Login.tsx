@@ -1,13 +1,14 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { FaLock, FaUser } from 'react-icons/fa';
-import axios from 'axios';
-import swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
-import { BACKEND_URL } from '../../constants';
+import React, { useState, ChangeEvent, FormEvent } from "react";
+import { FaLock, FaUser } from "react-icons/fa";
+import { RiLockPasswordFill,RiCustomerService2Fill } from "react-icons/ri";
+import axios from "axios";
+import swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import { BACKEND_URL } from "../../constants";
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -27,82 +28,81 @@ const Login: React.FC = () => {
 
     try {
       const response = await axios.post(`${BACKEND_URL}/api/v1/user/login/`, { email, password });
-      console.log('Login successful:', response.data);
-      let accessToken = response.data.response.accessToken;
-      localStorage.setItem('accessToken', accessToken);
-      swal.fire('Success', 'Login successful!', 'success');
-      navigate('/home');
+      console.log("Login successful:", response.data);
+      const accessToken = response.data.response.accessToken;
+      localStorage.setItem("accessToken", accessToken);
+      swal.fire("Success", "Login successful!", "success");
+      navigate("/home");
     } catch (error: any) {
-      setError(error.response?.data?.message || 'Login failed');
+      setError(error.response?.data?.message || "Login failed");
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#020A4A] flex items-center justify-center">
-      <div className="bg-[#1F2C62] p-8 rounded-lg shadow-md min-h-96 lg:w-[30rem]">
-        <h2 className="text-2xl font-bold text-center mb-6 text-white">Login</h2>
-        <p className="text-sm text-white mb-6 text-center">
-          Please enter your login details to continue
-        </p>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
+
+      <div className="bg-[#1F2C62]  rounded-lg  w-full max-w-lg mx-auto">
+      <form onSubmit={handleSubmit}>
+        <div className="space-y-4">
+          <div>
+            <label className="text-white text-base font-semibold flex items-center gap-4 mb-3" htmlFor="email">
+             <FaUser/>
               Email
             </label>
             <div className="relative">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                <FaUser className="text-gray-400" />
-              </span>
+              <FaUser className="absolute top-4 left-3 text-gray-400" />
               <input
-                className="input input-bordered w-full pl-10 bg-[#020A4A] text-white"
-                id="email"
+                className="bg-[#020A4A] text-white w-full py-2 px-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 input"
                 type="text"
-                placeholder="Enter your Email"
+                id="email"
+                name="email"
+                placeholder="Email"
                 value={email}
                 onChange={handleEmailChange}
               />
             </div>
           </div>
-          <div className="mb-6">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="password">
+          <div>
+            <label className="flex  items-center text-white text-base font-semibold gap-4 mb-3" htmlFor="password">
+              <FaLock/>
               Password
             </label>
             <div className="relative">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                <FaLock className="text-gray-400" />
-              </span>
+              <FaLock className="absolute top-4 left-3 text-gray-400" />
               <input
-                className="input input-bordered w-full pl-10 bg-[#020A4A] text-white"
-                id="password"
+                className="bg-[#020A4A] text-white w-full py-2 px-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 input"
                 type="password"
-                placeholder="Enter your password"
+                id="password"
+                name="password"
+                placeholder="Password"
                 value={password}
                 onChange={handlePasswordChange}
               />
             </div>
           </div>
-          <button className="btn btn-bg text-black border-none w-full" type="submit" disabled={isLoading}>
-            {isLoading ? 'Logging in...' : 'Login'}
-          </button>
-          {error && <p className="text-red-500 mt-2 text-center">{error}</p>}
-        </form>
-        <div className="mt-4 text-center">
-          <a href="#" className="text-sm bg-gradient-to-r from-lime-400 to-green-500 bg-clip-text hover:underline">
-            Forgot Password?
-          </a>
         </div>
-        <div className="mt-6 text-center">
-          <p className="text-sm text-white">
-            Don't have an account?{' '}
-            <a href="#" className="text-blue-600 hover:underline">
-              Sign Up
-            </a>
-          </p>
+        <button
+          type="submit"
+          className="w-full btn btn-bg text-black border-none py-2 rounded-md mt-6 font-semibold"
+          disabled={isLoading}
+        >
+          {isLoading ? "Logging in..." : "Login"}
+        </button>
+        {error && <p className="text-red-500 mt-2 text-center">{error}</p>}
+      </form>
+      <div className="mt-6 flex items-center justify-evenly">
+        <div className="flex flex-col items-center gap-1">
+          <RiLockPasswordFill className="text-3xl text-white"/>
+          <span  className="font-bold">Forgot Password</span>
         </div>
+        <div  className="flex flex-col items-center gap-1">
+        <RiCustomerService2Fill className="text-3xl text-white"/>
+          <span className="font-bold">Customer Service</span>
+          </div>
+
       </div>
-    </div>
+      </div>
   );
 };
 
