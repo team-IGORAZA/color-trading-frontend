@@ -5,7 +5,7 @@ import { CiSquareMore } from "react-icons/ci";
 import { FaUnlock } from "react-icons/fa";
 
 export default function Auth() {
-  const [isShowLogin, setShowLogin] = useState(false);
+  const [isShowLogin, setShowLogin] = useState(true);
 
   return (
     <div className="min-h-screen">
@@ -17,6 +17,7 @@ export default function Auth() {
         {isShowLogin ? "Please Login With your email and password" : "Please Register Your account please"}
         </p>
       </div>
+      <div className="">
       <div className="flex items-center justify-between mb-6 px-16">
         <button
           onClick={() => setShowLogin(true)}
@@ -32,6 +33,7 @@ export default function Auth() {
           <CiSquareMore className="text-3xl"/>
           Register
         </button>
+      </div>
       </div>
       {isShowLogin ? (
         <div className="p-3">

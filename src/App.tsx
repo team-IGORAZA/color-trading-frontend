@@ -5,6 +5,7 @@ import Home from "./Pages/Home/Home"
 import "./App.css"
 import WinGO1Min from "./Pages/WinGO1Min/WinGO1Min"
 import HomePage from "./Components/HomePage"
+import Profile from "./Pages/Profile/Profile"
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
             {/* * protected paths place here */}
             <Route path="/home" element={<Home />} />
             <Route path="/win-go-1-min" element={<WinGO1Min/>}/>
+            <Route path="/profile" element={<Profile/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
