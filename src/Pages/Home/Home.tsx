@@ -12,8 +12,8 @@ export default function Home() {
       <NotificationBar/>
       <BannerImage/>
       <HomeGames/>
-      <BottomNavbar/>
       <WithdrawalPanel/>
+      <BottomNavbar/>
     </main>
   )
 }

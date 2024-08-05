@@ -11,7 +11,7 @@ export default function BottomNavbar() {
     const navigate = useNavigate();
 
     const navLinks = [
-        { label: "Home", icon: <FaHome />, link: "" },
+        { label: "Home", icon: <FaHome />, link: "/" },
         { label: "Promotion", icon: <GrAnnounce />, link: "" },
         { label: "Wallet", icon: <CiDollar />, link: "" },
         { label: "Account", icon: <MdOutlineAccountCircle />, link: "/profile" },
@@ -23,7 +23,7 @@ export default function BottomNavbar() {
     };
 
     return (
-        <nav className="flex sticky z-50 bottom-0 bottom-bg w-full h-16 items-center justify-between px-4 bg-gradient-to-r from-purple-400 to-pink-500">
+        <nav className="flex fixed z-50 bottom-0 bottom-bg w-full h-16 items-center justify-between px-4 bg-gradient-to-r from-purple-400 to-pink-500">
             {navLinks.map((data, index) => (
                 <div key={data.label} className="flex flex-col items-center">
                     <motion.button
