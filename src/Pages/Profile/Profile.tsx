@@ -8,7 +8,7 @@ export default function Profile() {
   const navigate = useNavigate()
   return (
     <div className="min-h-screen">
-      <section className="p-3">
+      <section className="p-3 mb-16">
         <h3 className="text-white text-3xl font-bold">Profile</h3>
         <ProfileCard />
         <ProfileBalance/>
