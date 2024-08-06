@@ -33,12 +33,12 @@ const TimeBanner: React.FC<TimeBannerProps> = ({
         });
       }, 1000);
 
-      // Cleanup the interval when component unmounts or isUserParticipated changes
+      // ?Cleanup the interval when component unmounts or isUserParticipated changes
       return () => {
         if (timerRef.current) clearInterval(timerRef.current);
       };
     } else {
-      setTimeLeft(59); // Reset timer when isUserParticipated is false
+      setTimeLeft(59); // ? Reset timer when isUserParticipated is false
     }
   }, [isUserParticipated]);
 
