@@ -5,7 +5,7 @@ export const WalletBanner = () => {
             background: "linear-gradient(90deg, #72C6EF 0%, #004E8F 100%)"
 
         }}
-        className="relative w-[370px] lg:w-full h-48 rounded-[24px] p-4 overflow-hidden"
+        className="relative w-[370px] lg:w-[407px] h-48 rounded-[24px] p-4 overflow-hidden"
       >
         <div className="absolute left-40 bottom-24 rotate-12 ">
           <GradientCircle />
