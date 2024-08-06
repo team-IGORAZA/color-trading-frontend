@@ -14,7 +14,7 @@ export default function BottomNavbar() {
     const navLinks = [
         { label: "Home", icon: <FaHome />, link: "/home" },
         { label: "Promotion", icon: <GrAnnounce />, link: "" },
-        { label: "Wallet", icon: <CiDollar />, link: "/" },
+        { label: "Wallet", icon: <CiDollar />, link: "/wallet" },
         { label: "Account", icon: <MdOutlineAccountCircle />, link: "/profile" },
     ];
 

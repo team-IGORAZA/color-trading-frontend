@@ -7,7 +7,7 @@ export default function ProfileCard() {
         <main className="mt-3">
             <section className="flex justify-center mx-auto">
                 <div style={{ background: "linear-gradient(90deg, #1F1C2C 0%, #928DAB 100%)" }}
-                    className="w-full max-w-xl flex space-x-8  p-4 h-72 rounded-[50px]">
+                    className="w-full  flex space-x-8  p-4 h-72 rounded-[50px]">
                     {/* ?image section  */}
                     <div>
                         <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" className="h-40 lg:h-44 rounded-lg" alt="Profile Pic" />

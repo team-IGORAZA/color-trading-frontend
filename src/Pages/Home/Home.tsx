@@ -7,7 +7,7 @@ import WithdrawalPanel from "./WithdrawlPannel";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center items-center max-w-4xl py-12 mx-auto">
+    <main className="flex flex-col   py-12 ">
       <section className="mb-16">
         <NotificationBar />
         <BannerImage />

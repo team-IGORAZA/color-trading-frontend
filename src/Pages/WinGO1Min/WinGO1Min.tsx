@@ -4,6 +4,7 @@ import ColorMap from "./ColorMap";
 import { useState } from "react";
 import axios from "axios";
 import { BACKEND_URL } from "../../constants";
+import BottomNavbar from "../../Components/BottomNavbar";
 
 export default function WinGO1Min() {
   const accessToken = localStorage.getItem("accessToken");
@@ -44,7 +45,7 @@ export default function WinGO1Min() {
     }
   };
 
-  const userParticipate = async () => {
+  const userSubmitToParticipate = async () => {
     setLoading(true);
     try {
       if (!userSlectedColorId) {
@@ -62,7 +63,8 @@ export default function WinGO1Min() {
   };
 
   return (
-    <main className="p-2">
+    <>
+      <main className="p-2">
       <header className="flex items-center space-x-4">
         <button
           onClick={() => window.history.back()}
@@ -85,7 +87,7 @@ export default function WinGO1Min() {
         <ColorMap setUserSelectedColorID={setUserSelectedColorID} />
         {!isUserParticipated && (
           <button
-            onClick={userParticipate}
+            onClick={userSubmitToParticipate}
             className="btn mt-6 w-full max-w-4xl btn-bg text-black shadow-xl border-none"
           >
             {loading ? "Loading Please Wait...." : "Participate"}
@@ -93,6 +95,8 @@ export default function WinGO1Min() {
         )}
       </section>
     </main>
+    <BottomNavbar/>
+    </>
   );
 }
 

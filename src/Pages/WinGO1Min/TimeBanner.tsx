@@ -33,12 +33,12 @@ const TimeBanner: React.FC<TimeBannerProps> = ({
         });
       }, 1000);
 
-      // Cleanup the interval when component unmounts or isUserParticipated changes
+      // ?Cleanup the interval when component unmounts or isUserParticipated changes
       return () => {
         if (timerRef.current) clearInterval(timerRef.current);
       };
     } else {
-      setTimeLeft(59); // Reset timer when isUserParticipated is false
+      setTimeLeft(59); // ? Reset timer when isUserParticipated is false
     }
   }, [isUserParticipated]);
 
@@ -63,7 +63,7 @@ const TimeBanner: React.FC<TimeBannerProps> = ({
   return (
     <div
       style={{ background: "linear-gradient(180deg, #AFFF00 0%, #699900 100%)" }}
-      className="relative w-[370px] lg:w-[407px] h-48 rounded-[24px] p-2 overflow-hidden"
+      className="relative w-[370px] lg:w-full h-48 rounded-[24px] p-2 overflow-hidden"
     >
       <div className="absolute left-40 bottom-24 rotate-12">
         <GradientCircle />
