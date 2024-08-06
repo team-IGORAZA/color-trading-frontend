@@ -1,5 +1,5 @@
 body {
-  background: #1f2c62
+  background: #1f2c62;
 
 }
 
@@ -13,5 +13,9 @@ body {
 }
 .bottom-bg {
   background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+
+}
+.header-bg {
+  background: #020A4A;
 
 }
