@@ -7,6 +7,7 @@ import WinGO1Min from "./Pages/WinGO1Min/WinGO1Min"
 import HomePage from "./Components/HomePage"
 import Profile from "./Pages/Profile/Profile"
 import Gift from "./Pages/Gift/Gift"
+import { Wallet } from "./Pages/Wallet/Wallet"
 
 export default function App() {
   return (
@@ -23,6 +24,8 @@ export default function App() {
             <Route path="/win-go-1-min" element={<WinGO1Min/>}/>
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/gift" element={<Gift/>}/>
+            <Route path="/wallet" element={<Wallet/>}/>
+
 
           </Route>
         </Routes>
